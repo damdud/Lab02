@@ -1,4 +1,13 @@
 #Pierwsze testy
+
+## Anatomia testu jednostkowego
+
+* Stan przed
+* Akcja
+* Stan po
+
+## System under test
+
 ## Uruchamianie przykładów 
 ```
 calculator.exe & echo %errorlevel%
