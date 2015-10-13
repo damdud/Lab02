@@ -6,7 +6,7 @@
 * Akcja
 * Stan po
 
-## System under test
+## System under test (SUT)
 
 ## Uruchamianie przykładów 
 ```
