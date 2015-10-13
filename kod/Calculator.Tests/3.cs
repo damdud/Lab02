@@ -1,69 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
+using FakeItEasy;
+using NUnit.Framework;
 
 namespace Calculator.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ProgTests
     {
-        private Mock<ICalculator> _calculatorMock;
-
-        private Prog _sut;
-
-        [TestInitialize]
+        [SetUp]
         public void SetUp()
         {
-            _calculatorMock = new Mock<ICalculator>();
-            _sut = new Prog(_calculatorMock.Object);
+            _calculator = A.Fake<ICalculator>();
+            _sut = new Prog(_calculator);
         }
 
-        [TestMethod]
+        private ICalculator _calculator;
+        private Prog _sut;
+
+        [Test]
         public void Run_Should_Call_Calculator_With_Sum_Operation_When_First_Arg_Was_sum()
         {
-            // arange
-            _calculatorMock
-                .Setup(x => x.Calculate(It.IsAny<Operation>(), It.IsAny<IEnumerable<int>>()))
-                .Returns(0);
-
             _sut.Run(new[] { "sum" });
 
-            _calculatorMock
-                .Verify(x => x.Calculate(Operation.Sum, It.IsAny<IEnumerable<int>>()), Times.Once);
+            A.CallTo(() => _calculator.Calculate(Operation.Sum, A<IEnumerable<int>>._))
+                .MustHaveHappened();
         }
 
-        [TestMethod]
+        [Test]
         public void Should_Return_IntMin_When_Calculator_Thows_Exception()
         {
             // arange
-            _calculatorMock
-                .Setup(x => x.Calculate(It.IsAny<Operation>(), It.IsAny<IEnumerable<int>>()))
+            A.CallTo(() => _calculator.Calculate(A<Operation>._, A<IEnumerable<int>>._))
                 .Throws<ArgumentOutOfRangeException>();
-            int expected = int.MinValue;
 
-            int actual = _sut.Run(new[] { "sum" });
+            var expected = int.MinValue;
+
+            var actual = _sut.Run(new[] { "sum" });
 
             Assert.AreEqual(expected, actual);
         }
     }
 
-    [TestClass]
+    [TestFixture]
     public class CalculatorTests
     {
-        private Calculator _sut;
-
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
             _sut = new Calculator();
         }
 
-        [TestMethod]
+        private Calculator _sut;
+
+        [Test]
         public void Should_Throw_Exception_When_Unsupported_Operation_Is_Given()
         {
-            ExceptionAssert.Thows<ArgumentOutOfRangeException>(() => _sut.Calculate((Operation)10, Enumerable.Empty<int>()));
+            Assert.Throws<ArgumentOutOfRangeException>(() => _sut.Calculate((Operation)10, Enumerable.Empty<int>()));
+        }
+
+        [Test]
+        public void Should_Throw_Exception_When_Unsupported_Operation_Is_Given_With_Proper_ParamName()
+        {
+            string exprectedParamName = "op";
+            var exception = Assert.Throws<ArgumentOutOfRangeException>(() => _sut.Calculate((Operation)10, Enumerable.Empty<int>()));
+            Assert.That(exception.ParamName, Is.EqualTo(exprectedParamName));
         }
     }
 }

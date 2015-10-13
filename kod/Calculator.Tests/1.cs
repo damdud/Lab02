@@ -1,11 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace Calculator.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class ProgramTests
     {
-        [TestMethod]
+        [Test]
         public void Main_Returns_IntMin_When_Null_Args()
         {
             // arrange
@@ -18,7 +18,7 @@ namespace Calculator.Tests
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Main_Returns_IntMin_When_Empty_Args()
         {
             int expected = int.MinValue;
@@ -29,7 +29,7 @@ namespace Calculator.Tests
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Main_Returns_IntMin_When_First_Arg_Not_sum_Or_product()
         {
             int expected = int.MinValue;
@@ -40,7 +40,7 @@ namespace Calculator.Tests
             Assert.AreEqual(actual, expected);
         }
 
-        [TestMethod]
+        [Test]
         public void Main_Returns_Zero_When_There_Is_Only_One_Argument_string_sum()
         {
             int expected = 0;
@@ -50,7 +50,7 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Main_Returns_Sum_Of_All_Remaining_Arguments_After_sum_String()
         {
             string[] sumArguments = {"sum", "2", "4", "6"};
@@ -61,7 +61,7 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Main_Returns_One_When_There_Is_Only_One_Argument_string_product()
         {
             int expected = 1;
@@ -71,7 +71,7 @@ namespace Calculator.Tests
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
+        [Test]
         public void Main_Returns_Product_Of_All_Remaining_Arguments_After_product_String()
         {
             string[] sumArguments = { "product", "2", "5", "3" };
