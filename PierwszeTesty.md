@@ -1,4 +1,4 @@
-#Pierwsze testy
+# Pierwsze testy
 
 ## Anatomia testu jednostkowego
 
@@ -14,7 +14,7 @@ calculator.exe & echo %errorlevel%
 ```
 ## MSTest
 
-###Atrybuty
+### Atrybuty
 
 * TestClass - oznacza klasę zawirającą testy
 * TestMethod - oznacza metodę testująca
@@ -26,16 +26,17 @@ calculator.exe & echo %errorlevel%
 * MethodCleanup - kod wykonywany po wykonaniu każdej pojedynczej metody testowek w klasie
 * Ignore - Wymusza zignoranie testu / zestawu testów
 
-###Asercje
+### Asercje
 
 * Assert
 * CollectionAssert
 
 ## Inne frameworki
 
-* Nunit
+* NUnit
 
-### Obiekty testowe - fakes
+### Obiekty testowe - fakes / doubles
 
+* Dummy
 * Stub
 * Mock
