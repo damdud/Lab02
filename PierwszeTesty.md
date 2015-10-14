@@ -4,7 +4,7 @@
 
 ### System under test (SUT)
 
-Pod nazwą System Under Test (SUT) krytje się system (aplikacja) który testujemy. W szczególności dla testów jednostkowych będzie to pojedynczy fragment tego systemu, np. pojedyncza klasa.
+Pod nazwą System Under Test (SUT) kryje się system (aplikacja), który testujemy. W szczególności dla testów jednostkowych będzie to pojedynczy fragment tego systemu, np. pojedyncza klasa.
 
 ### Asercja
 
@@ -37,12 +37,12 @@ Innym popularnym frameworkiem do testowania na platformie .NET jest [xUnit.net](
 
 ### Odpalanie testów z poziomu Visual Studio
 
-Do uruchamiania testów z poziomu Visual Studio możemy użyć standardowego narzędzia nazwanego Test Explorer. Zezwala ono na uruchamianie i debugowanie testów oraz analizę ich wyników.
+Do uruchamiania testów z poziomu Visual Studio możemy użyć standardowego narzędzia nazwanego Test Explorer. Pozwala ono na uruchamianie i debugowanie testów oraz analizę ich wyników.
 
-Jeżeli korzystamy z frameworka NUnit to musimy zainstalować wtyczkę do Visual Studio (NUnit Test Adapter), która umożliwi współpracę pomiędzy NUnit i Test Explorerem.
+Jeżeli korzystamy z frameworka NUnit to musimy zainstalować wtyczkę do Visual Studio (NUnit Test Adapter), która umożliwia współpracę pomiędzy NUnit i Test Explorerem.
 
 Ponadto jeżeli posiadamy zainstalowane rozszerzenie [ReSharper firmy JetBrains](https://www.jetbrains.com/resharper/) możemy wygodnie odpalać testy z jego pomocą.
-Dla studentów wtyczka jest ta udostępniana bezpłatnie - [szczegóły tutaj](https://www.jetbrains.com/student/).
+Dla studentów wtyczka ta jest udostępniana bezpłatnie - [szczegóły tutaj](https://www.jetbrains.com/student/).
 
 ## NUnit i MSTest - porównanie    
 
@@ -82,10 +82,10 @@ Należy zauważyć że asercje w NUnit są dużo bardziej rozbudowane. Dostępne
 
 ## Obiekty testowe - fakes / doubles
 
-Gdy tworzymy testy jednostkowe wszelkie zależności jakie posiada nasza klasa powinniśmy podmienić na obiekty zastępcze (fake, double).
+Gdy tworzymy testy jednostkowe wszelkie zależności, jakie posiada nasza klasa, powinniśmy podmienić na obiekty zastępcze (fake, double).
 Pozwala to na oddzielenie naszego SUT od świata zewnętrznego i testowanie go w izolacji.
 Dzięki temu mamy pewność, że wszelkie potencjalne błędy w zależnych klasach nie wpłyną na wynik testu naszego SUT.
-Jeżeli nasz test kończy się porażką (failure) to oznacza że mamy błąd w naszym SUT (albo w jego teście) a nie w innej części aplikacji.
+Jeżeli nasz test kończy się porażką (failure) to oznacza, że mamy błąd w naszym SUT (albo w jego teście) a nie w innej części aplikacji.
 
 ### Typy obiektów zastępczych 
 
@@ -104,7 +104,7 @@ Do najpopularniejszych należą:
 * [NSubstitute](http://nsubstitute.github.io/)
 * [Microsoft Fakes](https://msdn.microsoft.com/en-us/library/hh549175.aspx)
 
-Każdy z tych frameworków udostępnia rozbudowany zestaw narzędzia do tworzenia obiektów zastępczych.
+Każdy z tych frameworków udostępnia rozbudowany zestaw narzędzi do tworzenia obiektów zastępczych.
 W większości z nich możemy tworzyć obiekty typy dummy, stub i mock, zwykle w nie więcej niż kilku linijkach kodu.
 
 Na naszych zajęciach będziemy głównie korzystać z frameworka FakeItEasy.
