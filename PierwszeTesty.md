@@ -108,9 +108,3 @@ Każdy z tych frameworków udostępnia rozbudowany zestaw narzędzi do tworzenia
 W większości z nich możemy tworzyć obiekty typy dummy, stub i mock, zwykle w nie więcej niż kilku linijkach kodu.
 
 Na naszych zajęciach będziemy głównie korzystać z frameworka FakeItEasy.
-
-
-## Uruchamianie przykładów 
-```
-calculator.exe & echo %errorlevel%
-```
