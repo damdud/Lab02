@@ -11,3 +11,4 @@ Poznamy podstawy związane z testowaniem jednostkowym i zobaczymy jak wygląda t
 
 ### Materiały
 * Prezentacja: [Pierwsze testy](PierwszeTesty.md)
+* Poglądowa aplikacja: [Calc](Calc.md)

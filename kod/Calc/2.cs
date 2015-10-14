@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
-namespace Calculator
+namespace Calc
 {
     public class Program2
     {

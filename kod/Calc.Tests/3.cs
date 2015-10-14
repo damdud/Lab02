@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Calc;
 using FakeItEasy;
 using NUnit.Framework;
 
@@ -49,10 +50,10 @@ namespace Calculator.Tests
         [SetUp]
         public void Setup()
         {
-            _sut = new Calculator();
+            _sut = new Calc.Calculator();
         }
 
-        private Calculator _sut;
+        private Calc.Calculator _sut;
 
         [Test]
         public void Should_Throw_Exception_When_Unsupported_Operation_Is_Given()

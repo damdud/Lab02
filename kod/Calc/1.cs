@@ -1,4 +1,4 @@
-﻿namespace Calculator
+﻿namespace Calc
 {
     // taki kod też działa
     public class Program

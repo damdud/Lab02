@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Calculator
+namespace Calc
 {
     public interface ICalculator
     {
