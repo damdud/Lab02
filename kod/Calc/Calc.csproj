@@ -36,7 +36,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Calc.Program</StartupObject>
+    <StartupObject>Calc.Program2</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
