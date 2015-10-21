@@ -37,7 +37,7 @@ namespace Calculator.Tests
             int expected = int.MinValue;
 
             // act
-            int actual = SUT.Main(new[] { "limes"});
+            int actual = SUT.Main(new[] { "limes" });
 
             Assert.AreEqual(actual, expected);
         }
@@ -55,7 +55,7 @@ namespace Calculator.Tests
         [Test]
         public void Main_Returns_Sum_Of_All_Remaining_Arguments_After_sum_String()
         {
-            string[] sumArguments = {"sum", "2", "4", "6"};
+            string[] sumArguments = { "sum", "2", "4", "6" };
             int expected = 12;
 
             int actual = SUT.Main(sumArguments);
@@ -127,5 +127,7 @@ namespace Calculator.Tests
 
             Assert.AreEqual(expected, actual);
         }
+
+
     }
 }

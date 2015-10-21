@@ -10,26 +10,14 @@ namespace Calc
             return (args == null || args.Length == 0 || (args[0] != "sum" && args[0] != "product" && args[0] != "aseq" && args[0] != "ndec"))
                 ? int.MinValue
                 : args[0] == "sum"
-                    ? args.Skip(1).Select(int.Parse).Aggregate(0, (a, b) => a + b)
+                    ? args.Skip(1).Select(int.Parse).Aggregate(1, (a, b) => a + b)
                     : args[0] == "product"
-                        ? args.Skip(1).Select(int.Parse).Aggregate(0, (a, b) => a * b)
+                        ? args.Skip(1).Select(int.Parse).Aggregate(1, (a, b) => a * b)
                         : args[0] == "aseq"
                             ? aseq(args)
                             : ndec(args);
 
 
-            //string test = (args == null || args.Length == 0 || (args[0] != "sum" && args[0] != "product" && args[0] != "aseq" && args[0] != "ndec"))
-            //? "chyjnia"
-            //: args[0] == "sum"
-            //    ? "sum"
-            //    : args[0] == "product"
-            //        ? "product"
-            //        : args[0] == "aseq"
-            //            ? "aseq"
-            //            : "ndec";
-
-            //Console.WriteLine(test);
-            //return 0;
         }
 
         public static int aseq(string[] args)

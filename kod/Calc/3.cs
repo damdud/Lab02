@@ -19,6 +19,8 @@ namespace Calc
                     return arguments.Aggregate(0, (a, b) => a + b);
                 case Operation.Product:
                     return arguments.Aggregate(1, (a, b) => a * b);
+                case Operation.Aseq:
+                    //return arguments.Aggregate(1, (a, b, c ) => );
                 default:
                     throw new ArgumentOutOfRangeException(nameof(op), op, "unknown operation");
             }
@@ -28,7 +30,9 @@ namespace Calc
     public enum Operation
     {
         Sum,
-        Product
+        Product,
+        Aseq,
+
     }
 
     public class Prog
